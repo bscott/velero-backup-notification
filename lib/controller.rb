@@ -9,7 +9,7 @@ require 'mail'
 require_relative "k8s_client"
 
 Mail.defaults do
-  delivery_method :smtp, address: ENV["EMAIL_SMTP_HOST"], port: ENV["EMAIL_SMTP_PORT"], user_name: ENV["EMAIL_SMTP_USERNAME"], password: ENV["EMAIL_SMTP_PASSWORD"]
+  delivery_method :smtp, address: ENV["EMAIL_SMTP_HOST"], port: ENV["EMAIL_SMTP_PORT"], user_name: ENV["EMAIL_SMTP_USERNAME"], password: ENV["EMAIL_SMTP_PASSWORD"], enable_starttls_auto: true
 end
 
 class Controller
